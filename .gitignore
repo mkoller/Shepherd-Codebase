@@ -49,3 +49,6 @@ libraries/Arduino/
 
 # TropicSSL libraries
 libraries/Tropicssl/
+
+# python binaries
+*.pyc
