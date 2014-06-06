@@ -26,6 +26,8 @@
 /* Includes ------------------------------------------------------------------*/  
 #include "application.h"
 
+#include "spark_disable_cloud.h"
+
 #define SIMULATION_OFF 0
 #define SIMULATION_ON 1
 
@@ -43,7 +45,7 @@ int output1 = D2;
 int simulation_state;
  
 TCPClient client;
-byte server[] = { 192, 168, 1, 5 }; // Google
+byte server[] = { 192, 168, 16, 6 }; // Google
 
  
 void setup()

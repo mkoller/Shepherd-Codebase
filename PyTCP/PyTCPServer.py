@@ -38,7 +38,7 @@ def recvWorker(socket, summonState):
 
 # handle a clients timer
 def handleClientTimer(clientIP, clientDictionary):
-    print "The client: " + str(clientIP) + " has not contacted the Shepherd in 10 seconds"
+    print ("The client: " + str(clientIP) + " has not contacted the Shepherd in 10 seconds")
     newClientTimer = threading.Timer(10, handleClientTimer, [clientIP, clientDictionary])
     newClientTimer.start()
     clientDictionary[clientIP] = newClientTimer
@@ -66,7 +66,7 @@ while True:
             newClientTimer = threading.Timer(10, handleClientTimer, [clientIP, clientDictionary])
             newClientTimer.start()
             clientDictionary[clientIP] = newClientTimer
-            print "A new client connected to the Shepherd. The client address is: " + str(clientIP)
+            print ("A new client connected to the Shepherd. The client address is: " + str(clientIP))
         clientThread = threading.Thread(target=recvWorker, args = (clientSocket, summonState))
         clientThread.start()
 
@@ -75,9 +75,9 @@ while True:
             summonState = not (summonState)
 
             if(summonState):
-                print "Clients have been summoned."
+                print ("Clients have been summoned.")
             else:
-                print "The summon command has been turned off."
+                print ("The summon command has been turned off.")
 
     #except Exception as e:
     #    print e
